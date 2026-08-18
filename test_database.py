@@ -6,6 +6,10 @@ load_dotenv()
 
 database_url = os.environ["DATABASE_URL"]
 
+print("DATABASE_URL is present:", bool(database_url))
+print("DATABASE_URL starts with:", database_url[:20])
+print("DATABASE_URL length:", len(database_url))
+
 conn = psycopg2.connect(database_url)
 
 cursor = conn.cursor()
