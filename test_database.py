@@ -1,13 +1,11 @@
 import os
-import hashlib
+
 import psycopg2
 from dotenv import load_dotenv
 
 load_dotenv()
 
 database_url = os.environ["DATABASE_URL"]
-
-print("DATABASE_URL fingerprint:", hashlib.sha256(database_url.encode()).hexdigest())
 
 conn = psycopg2.connect(database_url)
 
